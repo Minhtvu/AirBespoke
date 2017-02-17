@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+    {% block main %}
+<!--currentTailor is the name of the instance
+    Change any object oriented parts with '{{currentTailor.YourFunction}}'-->
+
+<div class="col-sm-8 col-sm-offset-3">
+
+		<h1>{{currentTailor.name}} {{title}}</h1>
+    {% for item in currentTailor.fabric_inventory.all %}
+        <ul class="list-inline">
+            <li><b>Fabric Name:</b> {{ item.name }} </li>
+            <li><b>Sku:</b> {{item.sku}}</li>
+        </ul>
+    {% endfor %}
+<!--Button links to the inventory 'create' page
+    this page is used by the tailors to add fabrics to their list of available fabrics-->
+    <div id="create">
+    <p><a href='{{ currentTailor.get_tailor_inventory_create_url}}' class="btn btn-primary" role="button">Edit Fabrics</a></p>
+    </div>
+    <p><a href='{{ currentTailor.get_absolute_url }}' class="btn btn-primary" role="button">Go Back</a></p>
+</div>
+    
+</div>
+{% endblock %}

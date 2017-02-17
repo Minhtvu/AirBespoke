@@ -1,0 +1,105 @@
+.AirBespokeLogo{
+    background: url('/static/img/AirBespokeLogo.png') no-repeat;
+}
+
+.AirBespokeLogo{
+    background-position: 0 0;
+    width: 97px;
+    height: 88px;
+}
+
+.transparent {
+    opacity: 0.93; /* opacity [0-1] */
+    -moz-opacity: 0.93; /* opacity [0-1] */
+    -webkit-opacity: 0.93; /* opacity [0-1] */
+}
+span#siteTitle {
+    color: floralwhite;
+    padding: 0px 0px 0px 8px;
+    position: relative;
+    right: 2px;
+    top: 40px;
+    font-size:42px;
+    font-family:helvetica-w01-light,helvetica-w02-light,sans-serif;
+}
+@media screen and (max-width : 386px) {
+    span#siteTitle {
+        display: none;
+    }
+}
+
+.indexBody{
+    background: url('/static/img/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height:100%;
+}
+
+.s21label {
+    font: normal normal bold 15px/1.4em raleway,sans-serif;
+    transition: color 0s linear 0s;
+    color: #42C5BE;
+    display: inline-block;
+    border: 3px solid #42C5BE;
+    width: 200px;
+    height: 45px;
+    position: relative;
+    white-space: nowrap;
+    margin: calc(7 * 31px) 3px 0px;
+}
+.s21label:hover{
+    color: #ff69b4;
+    border-color: #ff69b4;
+}
+
+#id_fabrics li, #id_tailor_selection_field li {
+    list-style-type: none;
+}
+
+.col-centered{
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.messages {
+    margin-top: 50px;
+}
+
+#homepage-link, #homepage-link:hover {
+    text-decoration: none;
+}
+
+.row-centered {
+    text-align:center;
+}
+
+.centering {
+    float:none;
+    margin:0 auto;
+}
+
+form#measureForm p input {
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+h5.tailor_description {
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.tailor_center {
+    max-width: 80%;
+    margin: 0px auto;
+}
+
+#tailorForm {
+    text-align: center;
+}

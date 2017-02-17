@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+    <script type="text/javascript">
+        //function call itself when page is rendered
+        $(function(){
+
+            $('#tailor_loader').show();
+            $('#tailor_display').hide();
+            $('#tailor_loading').show();
+
+            {% if tailor_count <= 0 %}
+                {#            $('#tailor_loader').show();#}
+                $('#tailor_loading').text("Our system couldn't find an available tailor at the moment, but rest assure, we will find a tailor for your order, soon!")
+                setTimeout(function() {
+                    window.location=("{% url 'size_update' slug=product_slug %}")
+                }, 3000);
+            {% else %}
+                $('#tailor_loading').text("Loading Tailors...")
+                setTimeout(function() {
+                    $('#tailor_loading').hide();
+                    $('#tailor_loader').hide();
+                    $('#tailor_display').show();
+                }, 1500);
+
+            {% endif %}
+        });
+
+
+    </script>
+    <div class="row row-centered ">
+        <div class="col-centered"><h5 id="tailor_loading"></h5></div>
+    </div>
+    <div class="row row-centered ">
+        <h5 id="tailor_loading"></h5>
+        <div class="col-centered">
+            <div id="tailor_loader"><img alt="" src="/static/img/loader/facebook.svg" /></div>
+        </div>
+    </div>
+    <div class="row row-centered" id="tailor_display">
+        <div class="col-centered">
+            {% if tailor_count == 1 %}
+                <h5>We've found this tailor who suits your need:</h5>
+            {% else %}
+                <h5>We've found these tailors who suit your needs:</h5>
+            {% endif %}
+        </div>
+        <div class="centering">
+            <form id="tailorForm" method="post" action="" enctype="multipart/form-data">{% csrf_token %}
+                {{ form.as_p }}
+
+                <a class="btn btn-default" href="{% url 'shop_product' slug=product_slug %}">Back</a>
+
+                <input type="submit" class='btn btn-default' value="Next" />
+            </form>
+        </div>
+    </div>
+{% endblock %}

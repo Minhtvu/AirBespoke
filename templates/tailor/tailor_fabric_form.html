@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+<div class="col-sm-8 col-sm-offset-3">
+<h1>Fabric List</h1>
+<form method="post", action="" enctype="multipart/form-data">{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" class='btn btn-default' value="Save Fabrics" />
+</form>
+		<!--<h2>Fabric Test</h2>-->
+        <!--<h1>{{ currentTailor.name}}</h1>-->
+    <!--{% for item in currentTailor.fabric_inventory.all %}-->
+        <!--<ul class="list-inline">-->
+            <!--<li><b>Fabric Name:</b> {{ item.name }} </li>-->
+            <!--<li><b>Sku:</b> {{item.sku}}</li>-->
+        <!--</ul>-->
+    <!--{% endfor %}-->
+
+</div>
+{% endblock %}

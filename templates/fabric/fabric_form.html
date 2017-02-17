@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+<div class="col-sm-8 col-sm-offset-3">
+<h1>Fabric</h1>
+
+<form method="post", action="" enctype="multipart/form-data">{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" class='btn btn-default' value="Create Fabric" />
+</form>
+</div>
+{% endblock %}

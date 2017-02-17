@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block meta_title %}{{title}}{% endblock %}
+
+{% block main %}
+<div class="col-sm-6 col-sm-offset-3">
+    <!--{% if instance.image %}-->
+    <!--<img src="{{ instance.image.url}}" class="img-responsive">-->
+    <!--{% endif %}-->
+<h1>{{ title }} <small></small></h1>
+    <ul>
+        <li>Fabric SKU: {{item.0.sku}}</li>
+        <li>Height: {{ item.0.height }}</li>
+        <li>Weight: {{ item.0.weight }}</li>
+        <li>Neck Size: {{item.0.neck_size}}</li>
+        <li>Chest Around: {{item.0.chest_around}}</li>
+        <li>Sleeve Length: {{item.0.sleeve_length}}</li>
+        <li>Wrist Size: {{item.0.wrist_size}}</li>
+        <li>Full Back Length: {{item.0.full_back_length}}</li>
+        <li>Half Back Length: {{item.0.half_back_length}}</li>
+        <li>Full Shoulder Width: {{item.0.full_shoulder_width}}</li>
+        <li>Stomach: {{item.0.stomach}}</li>
+        <li>Waist Size: {{item.0.waist_size}}</li>
+        <li>Hip Size: {{item.0.hip_size}}</li>
+        <li>Pants Length: {{item.0.pants_length}}</li>
+        <li>Crotch Size: {{item.0.crotch_size}}</li>
+    </ul>
+
+<br/>
+    <p><a href='{{ currentTailor.get_tailor_order_url }}' class="btn btn-primary" role="button">Go Back</a></p>
+</div>
+{% endblock %}

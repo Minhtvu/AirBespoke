@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block main %}
+    <!--currentTailor is the name of the instance
+    Change any object oriented parts with '{{currentTailor.YourFunction}}'-->
+
+    <div class="row row-centered ">
+        <div class="col-centered">
+            <h1>{{currentTailor.name}} {{title}}:</h1>
+            {% for order in currentTailor.tailor_orders.all %}
+                {% for orderitem in items %}
+                    {% for orderindex in orderitem %}
+                        {% if orderindex.order.transaction_id == order.transaction_id %}
+                            <ul class="list-inline">
+                                <li><b>Order Name: </b>{{order.billing_detail_first_name}} {{order.billing_detail_last_name}}</li>
+                                <li><b>Details: </b>{{order.time}}</li>
+                                <li><a href='{{orderindex.id}}' class="btn btn-primary" role="button">View</a></li>
+                            </ul>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            {% endfor %}
+            {% if currentTailor.tailor_orders.all|length == 0 %}
+                <p>You don't currently have any orders. Please check back at another time.</p>
+            {% endif %}
+            <p><a href='{{ currentTailor.get_absolute_url }}' class="btn btn-default" role="button">Go Back</a></p>
+            <!--Button links to the inventory 'create' page
+                this page is used by the tailors to add fabrics to their list of available fabrics-->
+        </div>
+    </div>
+    </div>
+
+    </div>
+{% endblock %}

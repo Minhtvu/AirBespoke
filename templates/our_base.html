@@ -1,0 +1,63 @@
+{% load staticfiles %}
+<!--DOCTYPE html -->
+<html>
+<head> 
+<!--JAVASCRIPT-->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<style>
+{% block style %}
+
+{% endblock style %}
+</style>
+<title>{% block head_title %}Air Bespoke{% endblock head_title %}</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel='stylesheet' href='{% static "base.css" %}'/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--Header Start-->
+<!--TODO: Change to CSS when possible-->
+<div id="navigation" style="background-color: #000">
+        <!--Show Free Shipping Message-->
+        <!--TODO: paragraph may not be best tag for this-->
+        <div id="free-shipping">
+                <p border="0" class="text-center" style="color: #FFF">Free Shipping on All Orders!</p>
+        </div>
+        <!--Navigation Start-->
+        <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                        <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavBar" aria-expanded="true">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        
+                                </button>
+                                <a class="nav-brand" href="#">AirBespoke</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavBar">
+                                <ul class="nav navbar-nav">
+                                        <li class="active"><a href="#">Home</a></li>
+                                        <li><a href="#">Suits</a></li>
+                                        <li><a href="#">Shirts</a></li>
+                                        <li><a href="#">Style</a></li>
+                                        <li><a href="#">Tailors</a></li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                        <li><a href="#"><span class="glyphicon glyphicon-user"> Profile</span></a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-log-in"> Login</span></a></li>
+                                </ul>
+
+                </div>  
+		</nav>
+</div>
+</head>
+<body>
+{% block content %}
+
+{% endblock content %}
+</body>
+
+</html>

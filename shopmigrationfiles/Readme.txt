@@ -1,0 +1,1 @@
+apply migrations from the shop source code

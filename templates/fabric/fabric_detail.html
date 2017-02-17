@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block meta_title %}{{title}}{% endblock %}
+
+{% block main %}
+<div class="col-sm-6 col-sm-offset-3">
+    {% if instance.image %}
+    <img src="{{ instance.image.url}}" class="img-responsive">
+    {% endif %}
+<h1>{{ title }} <small>{{ instance.sku}}</small></h1>
+    <h2>{{instance.color}}</h2>
+
+{{ instance.content|linebreaks }} <br/>
+
+</div>
+{% endblock %}
